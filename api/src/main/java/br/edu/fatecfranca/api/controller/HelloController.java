@@ -1,10 +1,8 @@
-package br.edu.fatecfranca.api.controllers;
+package br.edu.fatecfranca.api.controller;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 
 @RestController
@@ -15,12 +13,6 @@ public class HelloController {
    public String hello() {
        return "API em funcionamento!";
    }
-   
-   @GetMapping("/users")
-   public String ListUsers() {
-       return "Lista de Usuários";
-   }
-   
 
 
 }
