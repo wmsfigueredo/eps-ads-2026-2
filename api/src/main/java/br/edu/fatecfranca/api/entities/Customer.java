@@ -3,6 +3,8 @@ package br.edu.fatecfranca.api.entities;
 
 import java.time.LocalDate;
 
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -174,8 +176,9 @@ public class Customer {
    private String municipality;
 
 
-   @Column(nullable = false)
-   private String state;
+  @JdbcTypeCode(SqlTypes.CHAR)
+@Column(nullable = false, length = 2, columnDefinition = "CHAR(2)")
+private String state;
 
 
    @Column(nullable = false)
