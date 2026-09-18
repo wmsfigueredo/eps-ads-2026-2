@@ -2,6 +2,7 @@ package br.edu.fatecfranca.api.entities;
 
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
@@ -11,6 +12,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 
@@ -179,6 +181,9 @@ public class Customer {
   @JdbcTypeCode(SqlTypes.CHAR)
 @Column(nullable = false, length = 2, columnDefinition = "CHAR(2)")
 private String state;
+
+    @OneToMany(mappedBy = "customer")
+   private List<Car> cars;
 
 
    @Column(nullable = false)
